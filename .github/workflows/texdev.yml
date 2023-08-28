@@ -1,0 +1,26 @@
+---
+name: Latex Build
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+            cd Mitgliedsantrag      
+      - uses: xu-cheng/latex-action@v2
+        with:
+          root_file: main.tex
+          working_directory: Mitgliedsantrag
+      - run: |
+          cp ./Mitgliedsantrag/main.pdf ./Mitgliedsantrag/Mitgliedsantrag.pdf
+      - uses: actions/upload-artifact@v3
+        with:
+          name: PDF
+          path: ./Mitgliedsantrag/Mitgliedsantrag.pdf

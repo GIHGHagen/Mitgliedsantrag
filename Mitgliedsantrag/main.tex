@@ -1,0 +1,42 @@
+\documentclass[12pt,oneside,a4paper,parskip=half]{scrartcl}
+\input{imports.tex}
+
+\begin{document}
+\thispagestyle{empty}
+% Logo on top right
+\begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=north east,inner sep=30pt] at (current page.north east)
+    {\includegraphics[height=3cm]{../Grafiken/Logo Hagen.png}};
+\end{tikzpicture}
+
+\begin{Form}[]
+    {\Large \textbf{Mitgliedsantrag GI HSG Hagen} }
+    \vspace*{1cm} \\
+    
+    
+
+    \begin{tabular}{llrl}
+        Nachname*: & \TextField[name=nachname, width=5cm,  bordercolor={gray}, borderstyle=U,]{} & Vorname*:  & 
+        \TextField[name=vorname, width=5cm,  bordercolor={gray}, borderstyle=U,]{} \\ \\
+        E-Mail*:       & \TextField[name=email, width=5cm,  bordercolor={gray}, borderstyle=U,]{} & Telefonnummer: & \TextField[name=tel, width=5cm,  bordercolor={gray}, borderstyle=U,]{}                                           \\ \\
+        Studiengang*: & \ChoiceMenu[radio,name=Studiengang, bordercolor={gray}, borderstyle=U, radiosymbol=6]{}{\ } Informatik                                                                     \\ \\
+                      & \ChoiceMenu[radio,name=Studiengang, bordercolor={gray}, borderstyle=U, radiosymbol=6]{}{\ } Wirtschaftsinformatik                                                          \\ \\
+                      & \multicolumn{2}{l}{\ChoiceMenu[radio,name=Studiengang, bordercolor={gray}, borderstyle=U, radiosymbol=6]{}{\ } sonstiges \TextField[name=, width=5cm,  bordercolor={gray}, borderstyle=U,]{}} \\ \\
+				GI-Mitgliedsnr: & \TextField[name=ginr, width=5cm, bordercolor={gray}, borderstyle=U,]{} \\
+    \end{tabular}
+    \vspace*{2cm}{} \\
+    Durch das Ausfüllen und Absenden dieses Antrags bestätigst du, dass du die Satzung gelesen und verstanden hast. Die Aktuelle Satzung findest du unter \url{https://hg-hagen.gi.de/satzung}. Der Vorstand wird über die Annahme oder gegebenenfalls Ablehnung deines Mitgliedsantrags entscheiden. Sobald dein Antrag angenommen wurde, wird sich der Vorstand mit dir in Verbindung setzen. Deine Daten werden vertraulich behandelt und nicht ohne deine Zustimmung an Dritte weitergegeben.
+
+    Deinen Mitgliedsantrag kannst du Formlos als PDF an \href{mailto:hg-hagen@lists.gi.de}{hg-hagen@lists.gi.de} senden, einem Vorstandsmitglied persönlich übergeben.
+
+    \vspace*{2cm}{} 
+    \begin{tabular}{p{3.5cm}p{3cm}p{2cm}p{7cm}}
+        \TextField[name=ort, width=3cm,  bordercolor={gray}, borderstyle=U,]{} & \TextField[name=datum, width=3cm,  bordercolor={gray}, borderstyle=U,]{} && \hrulefill \\
+        Ort & Datum &&  Unterschrift \\
+    \end{tabular}
+
+    
+    \vfill
+    *: Pflichtfelder
+\end{Form}
+\end{document}
