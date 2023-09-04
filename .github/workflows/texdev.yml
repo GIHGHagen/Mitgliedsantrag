@@ -22,5 +22,5 @@ jobs:
           cp ./Mitgliedsantrag/main.pdf ./Mitgliedsantrag/Mitgliedsantrag.pdf
       - uses: actions/upload-artifact@v3
         with:
-          name: PDF
+          name: Mitgliedsantrag
           path: ./Mitgliedsantrag/Mitgliedsantrag.pdf
